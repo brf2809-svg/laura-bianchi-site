@@ -12,19 +12,19 @@ export default function Home() {
       title: "Closet Intelligence",
       description:
         "Um guarda-roupa funcional, coerente e sofisticado, com mais clareza e menos excessos.",
-      href: "#",
+      href: "/closet-intelligence",
     },
     {
       title: "Personal Shopping Estratégico",
       description:
         "Compras mais inteligentes, com curadoria precisa e foco em imagem, não em tendência.",
-      href: "#",
+      href: "/personal-shopping",
     },
     {
       title: "Styling Executivo",
       description:
         "Presença elegante e respeitada para ambientes de alta exigência e responsabilidade.",
-      href: "#",
+      href: "/styling-executivo",
     },
   ];
 
@@ -69,42 +69,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(190,230,215,0.5),_transparent_35%),radial-gradient(circle_at_bottom_left,_rgba(234,208,212,0.25),_transparent_30%)]" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 py-8 md:px-10 lg:grid-cols-2 lg:px-16 lg:py-10">
-          <header className="flex items-center justify-between lg:col-span-2">
-            <div>
-              <p className="font-serif text-2xl tracking-wide text-[#547b6a]">
-                Laura Bianchi
-              </p>
-              <p className="mt-1 text-sm uppercase tracking-[0.2em] text-neutral-500">
-                Consultoria de Imagem
-              </p>
-            </div>
-
-            <nav className="hidden gap-8 text-sm text-neutral-600 md:flex">
-              <a href="#sobre" className="transition hover:text-[#547b6a]">
-                Sobre
-              </a>
-              <a href="#servicos" className="transition hover:text-[#547b6a]">
-                Serviços
-              </a>
-              <a
-                href="#como-funciona"
-                className="transition hover:text-[#547b6a]"
-              >
-                Experiência
-              </a>
-              <Link
-                href="/consultoria-imagem-estrategica"
-                className="transition hover:text-[#547b6a]"
-              >
-                Consultoria
-              </Link>
-              <a href="#contato" className="transition hover:text-[#547b6a]">
-                Contato
-              </a>
-            </nav>
-          </header>
-
+        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 py-10 md:px-10 lg:grid-cols-2 lg:px-16 lg:py-16">
           <div className="flex flex-col justify-center py-8 lg:py-16">
             <span className="mb-6 inline-block w-fit rounded-full border border-[#d8e8df] bg-[#f6fbf8] px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-[#547b6a]">
               Imagem estratégica para mulheres
@@ -121,7 +86,9 @@ export default function Home() {
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/consultoria-imagem-estrategica"
+                href="https://wa.me/5514996244361"
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full bg-[#547b6a] px-7 py-4 text-center text-sm font-medium tracking-wide text-white transition hover:opacity-90"
               >
                 Agendar Consultoria
@@ -245,12 +212,12 @@ export default function Home() {
             cada processo com olhar estratégico e atenção aos detalhes.
           </p>
 
-          <a
-            href="#contato"
+          <Link
+            href="/sobre"
             className="mt-8 w-fit rounded-full border border-neutral-300 px-6 py-3 text-sm font-medium text-neutral-700 transition hover:border-[#547b6a] hover:text-[#547b6a]"
           >
             Conheça mais
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -270,12 +237,12 @@ export default function Home() {
             </h2>
           </div>
 
-          <a
-            href="#contato"
+          <Link
+            href="/servicos"
             className="text-sm font-medium text-[#547b6a] underline-offset-4 hover:underline"
           >
             Ver todos os serviços
-          </a>
+          </Link>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -292,19 +259,13 @@ export default function Home() {
                 {service.description}
               </p>
 
-              {service.href.startsWith("/") ? (
-                <Link
-                  href={service.href}
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-[#547b6a]"
-                >
-                  <span>Saiba mais</span>
-                  <span className="transition group-hover:translate-x-1">→</span>
-                </Link>
-              ) : (
-                <span className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-[#547b6a]/60">
-                  <span>Em breve</span>
-                </span>
-              )}
+              <Link
+                href={service.href}
+                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-[#547b6a]"
+              >
+                <span>Saiba mais</span>
+                <span className="transition group-hover:translate-x-1">→</span>
+              </Link>
             </article>
           ))}
         </div>
@@ -425,59 +386,24 @@ export default function Home() {
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <a
-              href="https://wa.me/5500000000000"
+            <Link
+              href="https://wa.me/5514996244361"
+              target="_blank"
+              rel="noreferrer"
               className="rounded-full bg-white px-7 py-4 text-sm font-medium text-[#547b6a] transition hover:opacity-90"
             >
               Falar no WhatsApp
-            </a>
+            </Link>
 
-            <a
-              href="mailto:contato@laurabianchi.com"
+            <Link
+              href="mailto:24hcloset@gmail.com"
               className="rounded-full border border-white/40 px-7 py-4 text-sm font-medium text-white transition hover:bg-white/10"
             >
               Enviar e-mail
-            </a>
+            </Link>
           </div>
         </div>
       </section>
-
-      <footer className="border-t border-neutral-200 px-6 py-10 md:px-10 lg:px-16">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="font-serif text-2xl text-[#547b6a]">
-              Laura Bianchi
-            </p>
-            <p className="mt-1 text-sm text-neutral-500">
-              Consultoria de Imagem
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-6 text-sm text-neutral-600">
-            <Link href="/" className="hover:text-[#547b6a]">
-              Home
-            </Link>
-            <Link
-              href="/consultoria-imagem-estrategica"
-              className="hover:text-[#547b6a]"
-            >
-              Consultoria
-            </Link>
-            <a href="#sobre" className="hover:text-[#547b6a]">
-              Sobre
-            </a>
-            <a href="#contato" className="hover:text-[#547b6a]">
-              Contato
-            </a>
-            <a href="#" className="hover:text-[#547b6a]">
-              Instagram
-            </a>
-            <a href="#" className="hover:text-[#547b6a]">
-              TikTok
-            </a>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
