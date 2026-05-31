@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -32,15 +34,15 @@ export default function Home() {
     "Clareza sobre o que funciona em você",
     "Um guarda-roupa mais funcional e sofisticado",
     "Segurança ao se vestir em qualquer ocasião",
-    "Menos tempo perdido com decisões",
+    "Compras mais inteligentes conscientes = Menos tempo perdido.",
     "Uma presença mais forte, coerente e elegante",
   ];
 
   const audience = [
-    "Médicas",
-    "Executivas",
-    "Magistradas e promotoras",
-    "Mulheres em posição de liderança",
+    "SE VESTIR COM MAIS CLAREZA E INTENÇÃO",
+    "CONSTRUIR UMA IMAGEM SOFISTICADA SEM EXCESSOS",
+    "SENTIR-SE ELEGANTE NO DIA-A-DIA",
+    "UM GUARDA-ROUPA COERENTE E FUNCIONAL",
   ];
 
   const steps = [
@@ -69,57 +71,50 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(190,230,215,0.5),_transparent_35%),radial-gradient(circle_at_bottom_left,_rgba(234,208,212,0.25),_transparent_30%)]" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 py-10 md:px-10 lg:grid-cols-2 lg:px-16 lg:py-16">
+        <div className="relative mx-auto grid max-w-6xl gap-16 px-6 py-10 md:px-10 lg:grid-cols-2 lg:px-16 lg:py-16">
           <div className="flex flex-col justify-center py-8 lg:py-16">
             <span className="mb-6 inline-block w-fit rounded-full border border-[#d8e8df] bg-[#f6fbf8] px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-[#547b6a]">
               Imagem estratégica para mulheres
             </span>
 
-            <h1 className="max-w-2xl font-serif text-5xl leading-tight text-neutral-900 md:text-6xl">
-              Sua imagem precisa acompanhar o nível da sua trajetória.
+            <h1 className="font-serif text-5xl leading-[0.95] tracking-[-0.03em]  text-neutral-950 sm:text-6xl lg:text-7x1">
+              A forma como você se apresenta muda a forma como o mundo te vê.
             </h1>
-
-            <p className="mt-6 max-w-xl text-lg leading-8 text-neutral-600">
-              Consultoria de imagem estratégica para mulheres que desejam
-              expressar elegância, autoridade e autenticidade.
+            <br />
+            <p className="mt-7 max-w-xl text-base leading-8 text-neutral-600">
+              Consultoria de imagem estratégica, construída com intenção: para
+              mulheres que desejam alinhar presença, sofisticação e
+              autenticidade.
             </p>
-
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <br />
+            <div className="mt-9 flex flex-col gap-10 sm:flex-row">
               <Link
                 href="https://wa.me/5514996244361"
                 target="_blank"
-                rel="noreferrer"
-                className="rounded-full bg-[#547b6a] px-7 py-4 text-center text-sm font-medium tracking-wide text-white transition hover:opacity-90"
+                className="inline-flex items-center justify-center rounded-full bg-[#547b6a] px-7 py-4 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#476a5a]"
               >
                 Agendar Consultoria
               </Link>
 
-              <a
-                href="#servicos"
-                className="rounded-full border border-[#547b6a] px-7 py-4 text-center text-sm font-medium tracking-wide text-[#547b6a] transition hover:bg-[#f6fbf8]"
+              <Link
+                href="/servicos"
+                className="inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white/50 px-7 py-4 text-sm font-medium text-neutral-800 transition duration-300 hover:-translate-y-0.5 hover:border-[#547b6a] hover:text-[#547b6a]"
               >
                 Ver serviços
-              </a>
+              </Link>
             </div>
           </div>
 
-          <div className="relative min-h-[520px] overflow-hidden rounded-[2rem] border border-[#e8efeb] bg-[#f6fbf8] shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(84,123,106,0.08)_100%)]" />
-
-            <div className="absolute left-8 top-8 rounded-full bg-white/80 px-4 py-2 text-xs uppercase tracking-[0.18em] text-neutral-500 backdrop-blur">
-              Elegância. Presença. Clareza.
-            </div>
-
-            <div className="absolute inset-x-8 bottom-8 rounded-[1.75rem] bg-white p-8 shadow-[0_10px_40px_rgba(0,0,0,0.06)]">
-              <p className="font-serif text-3xl leading-snug text-neutral-900">
-                Imagem e estilo para mulheres que desejam alinhar presença,
-                sofisticação e identidade.
-              </p>
-
-              <p className="mt-4 text-sm leading-7 text-neutral-600">
-                Uma presença refinada, construída com intenção — sem excessos,
-                sem fórmulas prontas e sem perder a autenticidade.
-              </p>
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="max-w-[520px] overflow-hidden rounded-[2rem] shadow-[0_24px_70px_rgba(0,0,0,0.10)]">
+              <Image
+                src="/images/FotoLAura.jpeg"
+                alt="Laura Bianchi em ambiente elegante de consultoria"
+                width={900}
+                height={1100}
+                priority
+                className="h-[480px] w-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -132,24 +127,28 @@ export default function Home() {
           </p>
 
           <h2 className="mt-4 font-serif text-4xl text-neutral-900 md:text-5xl">
-            Para mulheres que ocupam espaços de responsabilidade
+            Para mulheres que desejam transmitir elegância com autenticidade
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-neutral-600">
-            Você construiu uma trajetória sólida, assume decisões importantes e
-            atua em ambientes que exigem presença, clareza e segurança. Este
-            trabalho é para mulheres que desejam que a imagem acompanhe esse
-            nível com precisão.
-          </p>
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {audience.map((item) => (
             <div
               key={item}
-              className="rounded-[1.5rem] border border-neutral-200 bg-white p-6 text-center shadow-sm"
-            >
-              <p className="font-serif text-2xl text-neutral-900">{item}</p>
+              className="
+                h-[140px]
+                rounded-[32px]
+                border
+                border-[#d8e8df]
+                bg-[#f6fbf8]
+                px-8
+                py-6
+                flex
+                items-center
+                justify-center
+                text-center">
+              <p className="text-[18px] leading-[1.55] uppercase text-[#547b6a]">{item}</p>
             </div>
           ))}
         </div>
@@ -164,9 +163,11 @@ export default function Home() {
           </p>
 
           <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-neutral-600">
-            Quando sua imagem não está alinhada, você perde força na comunicação
-            — mesmo sendo extremamente competente. A forma como você se veste
-            fala antes de você. Imagem não é vaidade. É linguagem.
+            Muitas mulheres possuem um guarda-roupa cheio,
+            mas ainda sentem que nada as realmente representa.
+            Quando sua imagem não comunica quem você é, vestir-se torna-se
+            confuso, cansativo e distante da mulher que deseja transmitir.
+            Elegância não está no excesso. Está na clareza, na intenção e na coerência.
           </p>
         </div>
       </section>
@@ -181,20 +182,19 @@ export default function Home() {
           </p>
 
           <h2 className="mt-4 font-serif text-4xl text-neutral-900 md:text-5xl">
-            Elegância não está no excesso, mas na coerência.
+            Cada detalhe comunica.
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-neutral-600">
-            A consultoria Laura Bianchi foi criada para mulheres que entendem
-            que imagem é linguagem, posicionamento e presença. Cada escolha —
-            do corte ao tecido, da cor ao caimento — é pensada para refletir
-            quem você é hoje, com sofisticação, clareza e autenticidade.
+            O corte, o tecido,  caimento, as proporções, e as escolhas que compõem a sua imagem influenciam diretamente a forma como sua presença é percebida.
+           </p>
+           <p className="mt-6 text-lg leading-8 text-neutral-600">
+           A consultoria com Laura Bianchi foi criada para ajudar mulheres a se vestirem de maneira sofisticada, construindo uma imagem alinhada à própria identidade, trajetória e estilo de vida, e não sobre seguir tendências.
+          </p>
+          <p className="mt-6 text-lg leading-8 text-neutral-600">
+            O objetivo é não é transformar você em outra pessoa, mas revelar com clareza e refinamento a mulher que você quer comunicar.
           </p>
 
-          <p className="mt-6 text-lg leading-8 text-neutral-600">
-            A proposta não é transformar você em outra pessoa. É alinhar sua
-            imagem à mulher que você se tornou.
-          </p>
         </div>
 
         <div className="flex flex-col justify-center rounded-[2rem] border border-[#ead0d4] bg-[#fff8f9] p-10">
@@ -207,9 +207,10 @@ export default function Home() {
           </h3>
 
           <p className="mt-6 text-lg leading-8 text-neutral-600">
-            Especializada em mulheres que ocupam posições de responsabilidade e
-            desejam alinhar presença, sofisticação e identidade, Laura conduz
-            cada processo com olhar estratégico e atenção aos detalhes.
+            Com 10 anos de experiência na Itália e atuação junto a grandes maisons de luxo como Chanel, Saint Laurent e Fendi, Laura Bianchi desenvolveu um olhar refinado e sensível sobre imagem, elegância e estilo pessoal.
+          </p>
+          <p className="mt-6 text-lg leading-8 text-neutral-600">  
+            Com atendimento próximo e personalizado, cada consultoria é conduzida de forma cuidadosa e exclusiva, focando no estilo de vida e objetivos de cada cliente.
           </p>
 
           <Link
@@ -279,7 +280,7 @@ export default function Home() {
             </p>
 
             <h2 className="mt-4 font-serif text-4xl text-neutral-900 md:text-5xl">
-              O que muda
+              O que muda quando a sua imagem se alinha à sua presença
             </h2>
           </div>
 
